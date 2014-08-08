@@ -1,6 +1,6 @@
 source("downloadAndPrepareData.R")
 
-drawPlot3 <- function () {
+drawPlot3 <- function (legendBox = "o") {
     with(householdPowerConsumption, {
         plot(
             datetime,
@@ -16,7 +16,8 @@ drawPlot3 <- function () {
             "topright",
             legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),
             col = c("black","red","blue"),
-            pch = rep("-",3)
+            pch = rep("-",3),
+            bty = legendBox
         )
     })
 }
