@@ -38,10 +38,10 @@ downloadAndPrepareData <- function() {
     }
     if (dim(householdPowerConsumption)[2] < 11) {
         householdPowerConsumption <<- cbind(
-            householdPowerConsumption, Timestamp = strptime(
+            householdPowerConsumption, Timestamp = as.POSIXct(strptime(
                 householdPowerConsumption$DateTimeString,
                 format="%d/%m/%Y %H:%M:%S"
-            )
+            ))
         )
     }
 }
