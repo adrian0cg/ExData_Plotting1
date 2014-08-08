@@ -14,7 +14,7 @@ downloadAndPrepareData <- function() {
     if (
         !exists("houseHoldPowerConsumption")
         || is.null(householdPowerConsumption)
-        || dim(householdPowerConsumption)[1]==2075259
+        || dim(householdPowerConsumption)[1]==2880
         ) {
         householdPowerConsumption <<- read.table(
             localFileName,
