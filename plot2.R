@@ -1,17 +1,21 @@
 source("downloadAndPrepareData.R")
 
-plot2 <- function() {
-    plotFileName <- "plot2.png"
-    png(filename=plotFileName)
+drawPlot2 <- function () {
     with(householdPowerConsumption, {
         plot(
-            Timestamp,
+            datetime,
             Global_active_power,
             xlab = "",
             ylab = "Global Active Power (kilowatts)",
             type = "l"
         )
     })
+}
+
+plot2 <- function() {
+    plotFileName <- "plot2.png"
+    png(filename=plotFileName)
+    drawPlot2()
     dev.off()
 }
 plot2()
